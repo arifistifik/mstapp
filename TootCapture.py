@@ -22,25 +22,22 @@ def login():
 
 
 class main(StreamListener):
-    def __init__(self):
-        self.status = status
-        self.account = status["account"]
-        self.g_vis = "public"
-        self.in_reply_to_id = None
-        self.media_files = None
-
-    def cp():
+    def on_update(self, status):
         account = status["account"]
-        tl = mastodon.timeline_home(limit=0)
-        listener = MstdnStreamListner()
-        stream = MstdnStream('api_base_url', 'access_token', listener)
-        stream.timeline_home()
         if account["acct"] == "アカウントID":
             if status#ここでトゥートの非公開を判別してスクショ取るはずなんですが。まだ作りかけです＞＜
                 im = ImageGrab.grab()
                 im.save('screenshot.png')#スクショ取るよ
 
-    
+ class bot():
+    def t_user():
+        try:
+            listener = main()
+            mastodon.user_stream(listener)
+         except:
+            pass
 
 if __name__ == '__main__':
-    main()
+    login()
+    l = threading.Thread(target=bot.t_user)
+    l.start()
