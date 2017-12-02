@@ -6,15 +6,6 @@ import requests
 
 
 class MstdnStream:
-"""Mastodon Steam Class
-
-
->>> from stream import MstdnStream, MstdnStreamListner
->>> listener = MstdnStreamListner()
->>> stream = MstdnStream('url_instance', 'access-token', listener)
->>> stream.public()
-
-"""
     def __init__(self, base_url, access_token, listener):
         self.base_url = base_url
         self.session = requests.Session()
