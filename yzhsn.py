@@ -10,14 +10,14 @@ import warnings, traceback
 from PIL import ImageGrab
 from stream import MstdnStream, MstdnStreamListner
 
-warnings.simplefilter("ignore", UnicodeWarning)##UnicodeWarningを黙らせます
+warnings.simplefilter("ignore", UnicodeWarning)##UnicodeWarningを黙らせます(　◜◡‾)
 """
 このスクリプトを動かすには、別途mastodonモジュールとpyscreenshotモジュールが必要だよ。
 どっちもpipで入れられるから、インストールしてから動かしてね。
 ログイントークンは事前に取得しておいてね。
 """
 def login():
-    mastodon = Mastodon(client_id="credtest.txt",access_token="clientcred.txt",api_base_url = "https://friends.nico")
+    mastodon = Mastodon(client_id="credtest.txt",access_token="clientcred.txt",api_base_url = "https://friends.nico")#インスタンスは変更可
     return mastodon
 
 
@@ -36,7 +36,7 @@ class main(StreamListener):
         stream = MstdnStream('api_base_url', 'access_token', listener)
         stream.timeline_home()
         if account["acct"] == "アカウントID":
-            if status
+            if status#ここでトゥートの非公開を判別してスクショ取るはずなんですが。まだ作りかけです＞＜
                 im = ImageGrab.grab()
                 im.save('screenshot.png')#スクショ取るよ
 
